@@ -130,6 +130,7 @@ for more info.`)
 			InFolders:                 opts.FromFolders,
 			BinaryInstallationOptions: opts.BinaryInstallationOptions,
 			Getters:                   getters,
+			Force:                     cla.Force,
 		})
 		if err != nil {
 			c.Ui.Error(fmt.Sprintf("Failed getting the %q plugin:", pluginRequirement.Identifier))
@@ -163,6 +164,8 @@ Options:
                                version, if there is a new higher one. Note that
                                this still takes into consideration the version
                                constraint of the config.
+  -force                       Forces installation of plugins, even if already
+                               installed.
 `
 
 	return strings.TrimSpace(helpText)
